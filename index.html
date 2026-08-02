@@ -1,227 +1,2087 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best IPTV Players 2026 - Top Reviews</title>
-    <style>
-        :root {
-            --primary-color: #0056b3;
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --card-bg: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<title>StreamHub Reviews</title>
+<meta name="description" content="Modern streaming software and media player reviews.">
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-        /* Header Style */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+<style>
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+}
 
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
+body{
+background:#050816;
+color:#fff;
+overflow-x:hidden;
+}
 
-        /* Main Content Container */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+a{
+text-decoration:none;
+color:inherit;
+}
 
-        .intro {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 1.2rem;
-            color: #555;
-        }
+.container{
+width:min(1200px,92%);
+margin:auto;
+}
 
-        /* Review Card Style */
-        .review-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            border-top: 5px solid var(--primary-color);
-        }
+header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:999;
+background:rgba(5,8,22,.75);
+backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-        }
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
 
-        .app-name {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
+.logo{
+font-size:30px;
+font-weight:800;
+background:linear-gradient(90deg,#00E5A8,#7C3AED);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-        .rating {
-            background: #ffc107;
-            color: #000;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+.menu{
+display:flex;
+gap:30px;
+}
 
-        .features {
-            margin-bottom: 20px;
-        }
+.menu a{
+transition:.3s;
+font-weight:500;
+}
 
-        .features ul {
-            list-style-type: none;
-        }
+.menu a:hover{
+color:#00E5A8;
+}
 
-        .features li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 8px;
-        }
+.btn{
+padding:14px 28px;
+border-radius:40px;
+background:linear-gradient(90deg,#7C3AED,#00E5A8);
+font-weight:700;
+display:inline-block;
+transition:.35s;
+}
 
-        .features li::before {
-            content: '✓';
-            color: green;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 35px rgba(0,229,168,.3);
+}
 
-        .download-btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: background 0.3s;
-            align-self: flex-start;
-        }
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+position:relative;
+overflow:hidden;
+}
 
-        .download-btn:hover {
-            background-color: #004494;
-        }
+.hero::before{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:#7C3AED;
+filter:blur(220px);
+opacity:.25;
+top:-200px;
+left:-150px;
+}
 
-        /* Footer Style */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            margin-top: 50px;
-        }
+.hero::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:#00E5A8;
+filter:blur(220px);
+opacity:.2;
+right:-150px;
+bottom:-150px;
+}
 
-        @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-            .card-header { flex-direction: column; align-items: flex-start; gap: 10px; }
-        }
-    </style>
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:64px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+color:#bfc5d6;
+margin-bottom:35px;
+}
+
+.search{
+display:flex;
+background:#111827;
+padding:10px;
+border-radius:60px;
+margin-top:25px;
+}
+
+.search input{
+flex:1;
+background:none;
+border:none;
+outline:none;
+color:white;
+padding:14px;
+font-size:16px;
+}
+
+.search button{
+border:none;
+padding:15px 30px;
+border-radius:40px;
+cursor:pointer;
+background:#00E5A8;
+font-weight:bold;
+}
+
+.mockup{
+height:520px;
+border-radius:30px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+font-weight:700;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-top:-70px;
+position:relative;
+z-index:3;
+}
+
+.stat{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+text-align:center;
+backdrop-filter:blur(20px);
+}
+
+.stat h2{
+font-size:40px;
+margin-bottom:10px;
+color:#00E5A8;
+}
+
+@media(max-width:900px){
+
+.hero-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.menu{
+display:none;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+}
+
+</style>
+
 </head>
 <body>
 
-    <header>
-        <h1>Best IPTV Players in 2026</h1>
-        <p>Your Ultimate Guide to the Top Streaming Apps for Android, Firestick & Smart TVs</p>
-    </header>
+<header>
 
-    <div class="container">
-        <div class="intro">
-            <p>Looking for the best app to play your IPTV subscriptions? We have tested and reviewed the top IPTV players available right now. Choose the one that fits your device best!</p>
-        </div>
+<div class="container">
 
-        <!-- App 1: TiviMate -->
-        <div class="review-card">
-            <div class="card-header">
-                <div class="app-name">1. TiviMate IPTV Player</div>
-                <div class="rating">⭐ 4.9/5</div>
-            </div>
-            <p style="margin-bottom: 15px;">TiviMate is widely considered the best IPTV player for Android TV and Firestick. It offers a modern, easy-to-use interface that looks just like a traditional cable TV guide.</p>
-            <div class="features">
-                <strong>Key Features:</strong>
-                <ul>
-                    <li>Modern user interface designed for big screens</li>
-                    <li>Support for multiple playlists</li>
-                    <li>Scheduled TV guide update (EPG)</li>
-                    <li>Catch-up and recording features (Premium)</li>
-                </ul>
-            </div>
-            <a href="#" class="download-btn">Visit Website</a>
-        </div>
+<nav>
 
-        <!-- App 2: IPTV Smarters Pro -->
-        <div class="review-card">
-            <div class="card-header">
-                <div class="app-name">2. IPTV Smarters Pro</div>
-                <div class="rating">⭐ 4.7/5</div>
-            </div>
-            <p style="margin-bottom: 15px;">A highly popular and versatile player that works on almost all devices including Android, iOS, Windows, and Smart TVs. It's great for managing both Live TV and VOD (Video on Demand).</p>
-            <div class="features">
-                <strong>Key Features:</strong>
-                <ul>
-                    <li>Works on Mobile, PC, and Smart TVs</li>
-                    <li>Supports Xtream Codes API and M3U files</li>
-                    <li>Parental controls integrated</li>
-                    <li>Master Search feature for movies and shows</li>
-                </ul>
-            </div>
-            <a href="#" class="download-btn">Visit Website</a>
-        </div>
+<div class="logo">StreamHub</div>
 
-        <!-- App 3: Flix IPTV -->
-        <div class="review-card">
-            <div class="card-header">
-                <div class="app-name">3. Flix IPTV</div>
-                <div class="rating">⭐ 4.5/5</div>
-            </div>
-            <p style="margin-bottom: 15px;">Flix IPTV is known for its beautiful theme and stability. It requires a one-time activation fee but is an excellent choice for Samsung and LG Smart TV users.</p>
-            <div class="features">
-                <strong>Key Features:</strong>
-                <ul>
-                    <li>Customizable themes and player interface</li>
-                    <li>Supports changing audio tracks and subtitles</li>
-                    <li>Fast and stable on Smart TVs</li>
-                </ul>
-            </div>
-            <a href="#" class="download-btn">Visit Website</a>
-        </div>
+<div class="menu">
+<a href="#">Home</a>
+<a href="#">Reviews</a>
+<a href="#">Compare</a>
+<a href="#">Guides</a>
+<a href="#">Contact</a>
+</div>
 
-    </div>
+<a href="#" class="btn">Explore</a>
 
-    <footer>
-        <p>&copy; 2026 BestIPTVReviews.com. All rights reserved.</p>
-        <p style="font-size: 0.8rem; margin-top: 5px;">Disclaimer: We do not host or provide any IPTV streams. This site is for educational purposes only.</p>
-    </footer>
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div>
+
+<h1>Discover the Best Media & Streaming Software</h1>
+
+<p>
+Explore in-depth reviews, feature comparisons, setup guides, and expert recommendations for media and streaming applications.
+</p>
+
+<div class="search">
+
+<input type="text" placeholder="Search software...">
+
+<button>Search</button>
+
+</div>
+
+<br>
+
+<a href="#" class="btn">Browse Reviews</a>
+
+</div>
+
+<div class="mockup">
+
+Premium Dashboard Preview
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<div class="stats">
+
+<div class="stat">
+<h2>250+</h2>
+<p>Software Reviews</p>
+</div>
+
+<div class="stat">
+<h2>50K+</h2>
+<p>Monthly Readers</p>
+</div>
+
+<div class="stat">
+<h2>120+</h2>
+<p>Comparison Guides</p>
+</div>
+
+<div class="stat">
+<h2>4.9★</h2>
+<p>User Rating</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- PART 1 ENDS HERE -->
+
+<!-- ========================= -->
+<!-- FEATURED REVIEWS SECTION -->
+<!-- ========================= -->
+
+<style>
+
+.section{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#bfc5d6;
+    max-width:700px;
+    margin:auto;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    overflow:hidden;
+    transition:.35s;
+    backdrop-filter:blur(18px);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 50px rgba(0,0,0,.4);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.badge{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:30px;
+    background:#00E5A8;
+    color:#000;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#c8d0df;
+    margin-bottom:20px;
+}
+
+.learn-btn{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:40px;
+    background:#7C3AED;
+    transition:.3s;
+}
+
+.learn-btn:hover{
+    background:#00E5A8;
+    color:#000;
+}
+
+.compare{
+    margin-top:120px;
+}
+
+.compare-table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.compare-table th{
+    background:#7C3AED;
+    padding:20px;
+}
+
+.compare-table td{
+    padding:20px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.04);
+}
+
+.compare-table tr:hover td{
+    background:rgba(255,255,255,.08);
+}
+
+.features-grid{
+    margin-top:100px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.feature-box{
+    padding:35px;
+    background:rgba(255,255,255,.05);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.35s;
+}
+
+.feature-box:hover{
+    transform:translateY(-8px);
+}
+
+.feature-icon{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:linear-gradient(45deg,#7C3AED,#00E5A8);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.feature-box h4{
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.feature-box p{
+    color:#c9cfdd;
+}
+
+@media(max-width:768px){
+
+.section-title h2{
+    font-size:34px;
+}
+
+.compare-table{
+    display:block;
+    overflow-x:auto;
+}
+
+}
+
+</style>
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Featured Reviews</h2>
+
+<p>
+Explore our latest software reviews, detailed analysis, feature comparisons,
+and performance insights.
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200" alt="Review">
+
+<div class="card-content">
+
+<span class="badge">Editor's Pick</span>
+
+<h3>Ultimate Media Player Review</h3>
+
+<p>
+A complete breakdown of performance, interface, compatibility,
+and usability.
+</p>
+
+<a href="#" class="learn-btn">Read Review</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" alt="Review">
+
+<div class="card-content">
+
+<span class="badge">Trending</span>
+
+<h3>Top Streaming Apps Compared</h3>
+
+<p>
+Compare features, speed, user experience, and supported platforms.
+</p>
+
+<a href="#" class="learn-btn">Compare</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200" alt="Review">
+
+<div class="card-content">
+
+<span class="badge">New</span>
+
+<h3>Best Apps for Smart TVs</h3>
+
+<p>
+Discover modern apps optimized for Android TV, webOS,
+and other smart TV platforms.
+</p>
+
+<a href="#" class="learn-btn">Explore</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section compare">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Quick Comparison</h2>
+
+<p>
+Compare popular software features at a glance.
+</p>
+
+</div>
+
+<table class="compare-table">
+
+<thead>
+
+<tr>
+
+<th>Software</th>
+<th>Platform</th>
+<th>User Friendly</th>
+<th>Performance</th>
+<th>Rating</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Player A</td>
+<td>Windows</td>
+<td>★★★★★</td>
+<td>★★★★★</td>
+<td>4.9</td>
+
+</tr>
+
+<tr>
+
+<td>Player B</td>
+<td>Android</td>
+<td>★★★★★</td>
+<td>★★★★☆</td>
+<td>4.8</td>
+
+</tr>
+
+<tr>
+
+<td>Player C</td>
+<td>macOS</td>
+<td>★★★★☆</td>
+<td>★★★★★</td>
+<td>4.7</td>
+
+</tr>
+
+<tr>
+
+<td>Player D</td>
+<td>Linux</td>
+<td>★★★★☆</td>
+<td>★★★★☆</td>
+<td>4.6</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Why Choose Our Reviews?</h2>
+
+<p>
+We focus on quality, performance, user experience,
+and practical recommendations.
+</p>
+
+</div>
+
+<div class="features-grid">
+
+<div class="feature-box">
+
+<div class="feature-icon">⚡</div>
+
+<h4>Fast Performance</h4>
+
+<p>
+Learn how different software performs across devices and operating systems.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<div class="feature-icon">🔒</div>
+
+<h4>Security</h4>
+
+<p>
+Discover applications with strong privacy practices and regular updates.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<div class="feature-icon">📱</div>
+
+<h4>Cross Platform</h4>
+
+<p>
+Find software compatible with desktop, mobile, and smart TV devices.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<div class="feature-icon">⭐</div>
+
+<h4>Expert Ratings</h4>
+
+<p>
+Read unbiased feature breakdowns, pros, cons, and overall scores.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- END OF PART 2 -->
+
+<!-- ================================= -->
+<!-- PART 3 : DEVICES & TESTIMONIALS  -->
+<!-- ================================= -->
+
+<style>
+
+.devices{
+    padding:100px 0;
+}
+
+.device-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+}
+
+.device-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    text-align:center;
+    padding:35px 20px;
+    transition:.35s;
+    backdrop-filter:blur(16px);
+}
+
+.device-card:hover{
+    transform:translateY(-10px);
+    border-color:#00E5A8;
+}
+
+.device-icon{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.device-card h3{
+    margin-bottom:10px;
+}
+
+.device-card p{
+    color:#bfc5d6;
+    font-size:15px;
+}
+
+.categories{
+    padding:100px 0;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.category{
+    padding:30px;
+    border-radius:20px;
+    background:linear-gradient(145deg,#111827,#1a2440);
+    transition:.3s;
+}
+
+.category:hover{
+    transform:scale(1.03);
+}
+
+.category h3{
+    margin-bottom:15px;
+}
+
+.category ul{
+    list-style:none;
+}
+
+.category li{
+    padding:8px 0;
+    color:#cfd6e5;
+}
+
+.testimonials{
+    padding:100px 0;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.testimonial{
+    background:rgba(255,255,255,.05);
+    border-radius:20px;
+    padding:30px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.testimonial p{
+    color:#cfd6e5;
+    margin-bottom:20px;
+    line-height:1.8;
+}
+
+.author{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.avatar{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(45deg,#7C3AED,#00E5A8);
+}
+
+.author h4{
+    margin-bottom:5px;
+}
+
+.cta-banner{
+    margin:100px auto;
+    padding:60px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#7C3AED,#00E5A8);
+    text-align:center;
+    color:#fff;
+}
+
+.cta-banner h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.cta-banner p{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:30px;
+}
+
+.cta-banner a{
+    display:inline-block;
+    padding:15px 35px;
+    background:#fff;
+    color:#111;
+    border-radius:40px;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.cta-banner{
+    padding:40px 20px;
+}
+
+.cta-banner h2{
+    font-size:30px;
+}
+
+}
+
+</style>
+
+<section class="devices">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Compatible Devices</h2>
+
+<p>
+Browse software recommendations for your favorite devices.
+</p>
+
+</div>
+
+<div class="device-grid">
+
+<div class="device-card">
+<div class="device-icon">📱</div>
+<h3>Android</h3>
+<p>Phones & Tablets</p>
+</div>
+
+<div class="device-card">
+<div class="device-icon">💻</div>
+<h3>Windows</h3>
+<p>Desktop & Laptop</p>
+</div>
+
+<div class="device-card">
+<div class="device-icon">🍎</div>
+<h3>macOS</h3>
+<p>Apple Computers</p>
+</div>
+
+<div class="device-card">
+<div class="device-icon">📺</div>
+<h3>Smart TV</h3>
+<p>Large Screen Experience</p>
+</div>
+
+<div class="device-card">
+<div class="device-icon">🔥</div>
+<h3>Streaming Devices</h3>
+<p>TV Streaming Hardware</p>
+</div>
+
+<div class="device-card">
+<div class="device-icon">🐧</div>
+<h3>Linux</h3>
+<p>Open Source Platforms</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="categories">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Popular Categories</h2>
+
+<p>
+Explore guides and reviews organized by topic.
+</p>
+
+</div>
+
+<div class="category-grid">
+
+<div class="category">
+
+<h3>Media Players</h3>
+
+<ul>
+<li>✔ Beginner Guides</li>
+<li>✔ Installation Tips</li>
+<li>✔ Feature Comparisons</li>
+<li>✔ Performance Reviews</li>
+</ul>
+
+</div>
+
+<div class="category">
+
+<h3>Streaming Apps</h3>
+
+<ul>
+<li>✔ Cross-Platform Apps</li>
+<li>✔ User Experience</li>
+<li>✔ Playback Features</li>
+<li>✔ Compatibility</li>
+</ul>
+
+</div>
+
+<div class="category">
+
+<h3>Smart TV Software</h3>
+
+<ul>
+<li>✔ TV Optimization</li>
+<li>✔ Interface Reviews</li>
+<li>✔ Setup Tutorials</li>
+<li>✔ Troubleshooting</li>
+</ul>
+
+</div>
+
+<div class="category">
+
+<h3>Buying Guides</h3>
+
+<ul>
+<li>✔ Comparison Articles</li>
+<li>✔ Best Picks</li>
+<li>✔ Expert Advice</li>
+<li>✔ FAQs</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="testimonials">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>What Readers Say</h2>
+
+<p>
+Feedback from our community of technology enthusiasts.
+</p>
+
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial">
+
+<p>
+"The comparison tables made it easy to choose the right software for my setup. Everything was clearly explained."
+</p>
+
+<div class="author">
+
+<div class="avatar"></div>
+
+<div>
+
+<h4>Alex M.</h4>
+
+<span>Technology Enthusiast</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="testimonial">
+
+<p>
+"I appreciate the clean layout, detailed reviews, and practical recommendations. It saved me a lot of research time."
+</p>
+
+<div class="author">
+
+<div class="avatar"></div>
+
+<div>
+
+<h4>Sarah T.</h4>
+
+<span>Content Creator</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="testimonial">
+
+<p>
+"The website is fast, modern, and easy to navigate. The buying guides were especially useful."
+</p>
+
+<div class="author">
+
+<div class="avatar"></div>
+
+<div>
+
+<h4>Daniel R.</h4>
+
+<span>Home Media User</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="cta-banner">
+
+<h2>Explore More Reviews</h2>
+
+<p>
+Discover detailed comparisons, setup guides, and practical advice to help you find software that fits your needs.
+</p>
+
+<a href="#">Start Exploring</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- END OF PART 3 -->
+
+<!-- ================================= -->
+<!-- PART 4 : BLOG & FAQ SECTION      -->
+<!-- ================================= -->
+
+<style>
+
+.blog{
+    padding:100px 0;
+}
+
+.blog-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.blog-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.blog-card:hover{
+    transform:translateY(-10px);
+}
+
+.blog-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.blog-content{
+    padding:25px;
+}
+
+.blog-date{
+    color:#00E5A8;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.blog-card h3{
+    margin-bottom:15px;
+    font-size:26px;
+}
+
+.blog-card p{
+    color:#cfd6e5;
+    margin-bottom:20px;
+    line-height:1.7;
+}
+
+.read-more{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:30px;
+    background:#7C3AED;
+    transition:.3s;
+}
+
+.read-more:hover{
+    background:#00E5A8;
+    color:#000;
+}
+
+.faq{
+    padding:100px 0;
+}
+
+.accordion{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    margin-bottom:18px;
+    border-radius:18px;
+    overflow:hidden;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.faq-question{
+    padding:22px 25px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:18px;
+    font-weight:600;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 25px 25px;
+    color:#cfd6e5;
+    line-height:1.8;
+}
+
+.newsletter{
+    padding:100px 0;
+}
+
+.news-box{
+    max-width:850px;
+    margin:auto;
+    background:linear-gradient(135deg,#141d35,#1f315c);
+    border-radius:25px;
+    padding:60px;
+    text-align:center;
+}
+
+.news-box h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.news-box p{
+    color:#cfd6e5;
+    margin-bottom:30px;
+}
+
+.news-form{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.news-form input{
+    flex:1;
+    min-width:260px;
+    padding:16px 18px;
+    border:none;
+    border-radius:50px;
+    outline:none;
+}
+
+.news-form button{
+    padding:16px 35px;
+    border:none;
+    border-radius:50px;
+    background:#00E5A8;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.news-box{
+    padding:40px 25px;
+}
+
+.news-box h2{
+    font-size:30px;
+}
+
+.news-form{
+    flex-direction:column;
+}
+
+}
+
+</style>
+
+<section class="blog">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Latest Articles</h2>
+<p>Read guides, tips, reviews, and technology updates.</p>
+</div>
+
+<div class="blog-grid">
+
+<div class="blog-card">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" alt="Article">
+
+<div class="blog-content">
+
+<div class="blog-date">July 2026</div>
+
+<h3>How to Choose the Right Media Player</h3>
+
+<p>
+Key factors to consider before selecting software for your desktop,
+mobile device, or smart TV.
+</p>
+
+<a href="#" class="read-more">Read Article</a>
+
+</div>
+
+</div>
+
+<div class="blog-card">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200" alt="Article">
+
+<div class="blog-content">
+
+<div class="blog-date">July 2026</div>
+
+<h3>Performance Comparison Guide</h3>
+
+<p>
+A practical overview of performance, usability, and compatibility across
+different platforms.
+</p>
+
+<a href="#" class="read-more">Read Article</a>
+
+</div>
+
+</div>
+
+<div class="blog-card">
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200" alt="Article">
+
+<div class="blog-content">
+
+<div class="blog-date">June 2026</div>
+
+<h3>Beginner's Setup Checklist</h3>
+
+<p>
+A step-by-step checklist to help you install and configure your media
+software efficiently.
+</p>
+
+<a href="#" class="read-more">Read Article</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="faq">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Frequently Asked Questions</h2>
+<p>Answers to common questions from our readers.</p>
+</div>
+
+<div class="accordion">
+
+<div class="faq-item">
+<div class="faq-question">
+<span>Is this website free to use?</span>
+<span>+</span>
+</div>
+<div class="faq-answer">
+Yes. All articles and guides on this website are freely accessible.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+<span>How often is the content updated?</span>
+<span>+</span>
+</div>
+<div class="faq-answer">
+New reviews, tutorials, and comparison articles are published regularly.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+<span>Do you compare multiple products?</span>
+<span>+</span>
+</div>
+<div class="faq-answer">
+Yes. We compare features, usability, performance, and compatibility.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+<span>Can I suggest a topic?</span>
+<span>+</span>
+</div>
+<div class="faq-answer">
+Absolutely. We welcome ideas for future reviews and tutorials.
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="newsletter">
+
+<div class="container">
+
+<div class="news-box">
+
+<h2>Join Our Newsletter</h2>
+
+<p>
+Get the latest reviews, tutorials, and comparison guides delivered to your inbox.
+</p>
+
+<form class="news-form">
+
+<input type="email" placeholder="Enter your email">
+
+<button type="submit">
+Subscribe
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- END OF PART 4 -->
+
+<!-- ================================= -->
+<!-- PART 5 : CONTACT & FOOTER         -->
+<!-- ================================= -->
+
+<style>
+
+.contact{
+    padding:100px 0;
+}
+
+.contact-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:40px;
+}
+
+.contact-info h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    color:#cfd6e5;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.info-box{
+    margin-bottom:20px;
+}
+
+.info-box h4{
+    margin-bottom:8px;
+    color:#00E5A8;
+}
+
+.contact-form{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:40px;
+}
+
+.contact-form form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:16px;
+    background:#111827;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    outline:none;
+}
+
+.contact-form textarea{
+    resize:none;
+    height:170px;
+}
+
+.contact-form button{
+    padding:16px;
+    background:linear-gradient(90deg,#7C3AED,#00E5A8);
+    border:none;
+    border-radius:40px;
+    color:#fff;
+    cursor:pointer;
+    font-size:17px;
+    font-weight:700;
+}
+
+footer{
+    margin-top:100px;
+    background:#04070f;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+    padding:70px 0;
+}
+
+.footer-logo{
+    font-size:34px;
+    font-weight:800;
+    background:linear-gradient(90deg,#00E5A8,#7C3AED);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:15px;
+}
+
+.footer-about{
+    color:#bfc5d6;
+    line-height:1.8;
+}
+
+.footer-links h3{
+    margin-bottom:20px;
+}
+
+.footer-links ul{
+    list-style:none;
+}
+
+.footer-links li{
+    margin:12px 0;
+}
+
+.footer-links a{
+    color:#cfd6e5;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#00E5A8;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:#111827;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#00E5A8;
+    color:#000;
+}
+
+.footer-bottom{
+    text-align:center;
+    padding:25px 0;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#8b95a7;
+}
+
+@media(max-width:900px){
+
+.contact-wrapper{
+    grid-template-columns:1fr;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<section class="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Contact Us</h2>
+
+<p>
+Have a question or feedback? We'd love to hear from you.
+</p>
+
+</div>
+
+<div class="contact-wrapper">
+
+<div class="contact-info">
+
+<h2>Let's Talk</h2>
+
+<p>
+Reach out with your questions, suggestions, or collaboration ideas. We aim to respond as quickly as possible.
+</p>
+
+<div class="info-box">
+<h4>Email</h4>
+<p>hello@example.com</p>
+</div>
+
+<div class="info-box">
+<h4>Office Hours</h4>
+<p>Monday – Friday, 9:00 AM – 6:00 PM</p>
+</div>
+
+<div class="info-box">
+<h4>Location</h4>
+<p>Your City, Your Country</p>
+</div>
+
+<div class="social-icons">
+<a href="#">🌐</a>
+<a href="#">📘</a>
+<a href="#">📸</a>
+<a href="#">▶️</a>
+</div>
+
+</div>
+
+<div class="contact-form">
+
+<form>
+
+<input
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+placeholder="Your Email"
+required>
+
+<input
+type="text"
+placeholder="Subject">
+
+<textarea
+placeholder="Write your message..."></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-logo">
+StreamHub
+</div>
+
+<p class="footer-about">
+Modern reviews, comparisons, tutorials, and technology insights to help you choose software and media tools with confidence.
+</p>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Company</h3>
+
+<ul>
+
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Blog</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Resources</h3>
+
+<ul>
+
+<li><a href="#">Guides</a></li>
+<li><a href="#">Reviews</a></li>
+<li><a href="#">Comparisons</a></li>
+<li><a href="#">FAQ</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Legal</h3>
+
+<ul>
+
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms of Service</a></li>
+<li><a href="#">Disclaimer</a></li>
+<li><a href="#">Cookies</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 StreamHub. All rights reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- END OF PART 5 -->
+
+<!-- ================================= -->
+<!-- PART 6 : JAVASCRIPT & CLOSING     -->
+<!-- ================================= -->
+
+<style>
+
+#backToTop{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:22px;
+    color:#fff;
+    background:linear-gradient(135deg,#7C3AED,#00E5A8);
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+    display:none;
+    z-index:9999;
+    transition:.3s;
+}
+
+#backToTop:hover{
+    transform:translateY(-5px) scale(1.05);
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+</style>
+
+<button id="backToTop" title="Back to top">
+↑
+</button>
+
+<script>
+
+// Smooth scrolling
+
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+
+    link.addEventListener("click",function(e){
+
+        const target=document.querySelector(this.getAttribute("href"));
+
+        if(target){
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior:"smooth"
+            });
+
+        }
+
+    });
+
+});
+
+// Sticky header
+
+const header=document.querySelector("header");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>60){
+
+        header.style.background="rgba(5,8,22,.95)";
+        header.style.boxShadow="0 10px 30px rgba(0,0,0,.3)";
+
+    }else{
+
+        header.style.background="rgba(5,8,22,.75)";
+        header.style.boxShadow="none";
+
+    }
+
+});
+
+// FAQ Accordion
+
+document.querySelectorAll(".faq-question").forEach(item=>{
+
+    item.addEventListener("click",()=>{
+
+        const answer=item.nextElementSibling;
+
+        const icon=item.querySelector("span:last-child");
+
+        if(answer.style.display==="block"){
+
+            answer.style.display="none";
+            icon.textContent="+";
+
+        }else{
+
+            document.querySelectorAll(".faq-answer").forEach(a=>{
+
+                a.style.display="none";
+
+            });
+
+            document.querySelectorAll(".faq-question span:last-child").forEach(i=>{
+
+                i.textContent="+";
+
+            });
+
+            answer.style.display="block";
+            icon.textContent="−";
+
+        }
+
+    });
+
+});
+
+// Reveal animation
+
+const observer=new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("active");
+
+        }
+
+    });
+
+},{
+    threshold:.15
+});
+
+document.querySelectorAll("section,.card,.feature-box,.device-card,.testimonial,.blog-card").forEach(el=>{
+
+    el.classList.add("reveal");
+    observer.observe(el);
+
+});
+
+// Animated counters
+
+document.querySelectorAll(".stat h2").forEach(counter=>{
+
+    const original=counter.innerText;
+
+    const value=parseInt(original.replace(/\D/g,''),10);
+
+    if(isNaN(value)) return;
+
+    let count=0;
+
+    const timer=setInterval(()=>{
+
+        count+=Math.ceil(value/80);
+
+        if(count>=value){
+
+            count=value;
+            clearInterval(timer);
+        }
+
+        counter.innerText=original.replace(/[0-9,]+/,count);
+
+    },20);
+
+});
+
+// Newsletter form
+
+const newsForm=document.querySelector(".news-form");
+
+if(newsForm){
+
+newsForm.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    alert("Thank you for subscribing!");
+
+    this.reset();
+
+});
+
+}
+
+// Contact form
+
+const contactForm=document.querySelector(".contact-form form");
+
+if(contactForm){
+
+contactForm.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    alert("Your message has been sent!");
+
+    this.reset();
+
+});
+
+}
+
+// Back To Top
+
+const back=document.getElementById("backToTop");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>400){
+
+        back.style.display="block";
+
+    }else{
+
+        back.style.display="none";
+
+    }
+
+});
+
+back.addEventListener("click",()=>{
+
+    window.scrollTo({
+
+        top:0,
+        behavior:"smooth"
+
+    });
+
+});
+
+// Simple search demo
+
+const searchInput=document.querySelector(".search input");
+
+const searchButton=document.querySelector(".search button");
+
+if(searchInput && searchButton){
+
+searchButton.addEventListener("click",()=>{
+
+    const value=searchInput.value.trim();
+
+    if(value===""){
+
+        alert("Please enter a search term.");
+
+    }else{
+
+        alert("Searching for: "+value);
+
+    }
+
+});
+
+}
+
+console.log("Website Loaded Successfully");
+
+</script>
 
 </body>
 </html>
