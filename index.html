@@ -3,238 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web IPTV Player</title>
-    <!-- Include HLS.js to enable .m3u8 streaming -->
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <title>Best IPTV Players 2026 - Top Reviews</title>
     <style>
         :root {
-            --bg-dark: #0f1115;
-            --bg-sidebar: #1a1d24;
-            --accent-color: #0078ff; 
-            --text-primary: #ffffff;
-            --text-secondary: #8b92a5;
-            --hover-bg: #252932;
+            --primary-color: #0056b3;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
-        /* Sidebar Styles */
-        .sidebar {
-            width: 320px;
-            background-color: var(--bg-sidebar);
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid #2a2e39;
+        /* Header Style */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .sidebar-header {
-            padding: 20px;
-            background-color: #14161c;
-            border-bottom: 1px solid #2a2e39;
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
-        .sidebar-header h2 {
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
             font-size: 1.2rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: #555;
         }
 
-        .channel-list {
-            list-style: none;
-            overflow-y: auto;
-            flex-grow: 1;
-        }
-
-        .channel-item {
-            padding: 16px 20px;
-            cursor: pointer;
-            border-bottom: 1px solid #222630;
-            transition: all 0.2s ease;
-        }
-
-        .channel-item:hover {
-            background-color: var(--hover-bg);
-        }
-
-        .channel-item.active {
-            background-color: var(--accent-color);
-            border-left: 4px solid #fff;
-        }
-
-        .channel-name {
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 4px;
-        }
-
-        .channel-desc {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        /* Video Area Styles */
-        .video-container {
-            flex-grow: 1;
-            background-color: #000;
+        /* Review Card Style */
+        .review-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .app-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .rating {
+            background: #ffc107;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .features {
+            margin-bottom: 20px;
+        }
+
+        .features ul {
+            list-style-type: none;
+        }
+
+        .features li {
             position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
         }
 
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Status Overlay */
-        #status-overlay {
+        .features li::before {
+            content: '✓';
+            color: green;
             position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(0,0,0,0.6);
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            display: none;
-            backdrop-filter: blur(4px);
+            left: 0;
+            font-weight: bold;
         }
 
-        /* Scrollbar styling */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-sidebar); }
-        ::-webkit-scrollbar-thumb { background: #3a404f; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #4a5166; }
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            align-self: flex-start;
+        }
+
+        .download-btn:hover {
+            background-color: #004494;
+        }
+
+        /* Footer Style */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .card-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+        }
     </style>
 </head>
 <body>
 
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h2>📺 Web IPTV Player</h2>
+    <header>
+        <h1>Best IPTV Players in 2026</h1>
+        <p>Your Ultimate Guide to the Top Streaming Apps for Android, Firestick & Smart TVs</p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <p>Looking for the best app to play your IPTV subscriptions? We have tested and reviewed the top IPTV players available right now. Choose the one that fits your device best!</p>
         </div>
-        <ul class="channel-list" id="channel-list">
-            <!-- Channels will be injected here by JavaScript -->
-        </ul>
-    </aside>
 
-    <main class="video-container">
-        <div id="status-overlay">Loading stream...</div>
-        <video id="video-player" controls preload="auto"></video>
-    </main>
+        <!-- App 1: TiviMate -->
+        <div class="review-card">
+            <div class="card-header">
+                <div class="app-name">1. TiviMate IPTV Player</div>
+                <div class="rating">⭐ 4.9/5</div>
+            </div>
+            <p style="margin-bottom: 15px;">TiviMate is widely considered the best IPTV player for Android TV and Firestick. It offers a modern, easy-to-use interface that looks just like a traditional cable TV guide.</p>
+            <div class="features">
+                <strong>Key Features:</strong>
+                <ul>
+                    <li>Modern user interface designed for big screens</li>
+                    <li>Support for multiple playlists</li>
+                    <li>Scheduled TV guide update (EPG)</li>
+                    <li>Catch-up and recording features (Premium)</li>
+                </ul>
+            </div>
+            <a href="#" class="download-btn">Visit Website</a>
+        </div>
 
-    <script>
-        // Sample IPTV Streams (Public Test Streams)
-        // You can replace the 'url' values with your own .m3u8 links
-        const channels = [
-            {
-                name: "Akamai Test Stream",
-                desc: "1080p HLS Stream",
-                url: "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
-            },
-            {
-                name: "Big Buck Bunny",
-                desc: "Open Source Movie (VOD)",
-                url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-            },
-            {
-                name: "Apple Basic Stream",
-                desc: "BipBop Test Source",
-                url: "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
-            }
-        ];
+        <!-- App 2: IPTV Smarters Pro -->
+        <div class="review-card">
+            <div class="card-header">
+                <div class="app-name">2. IPTV Smarters Pro</div>
+                <div class="rating">⭐ 4.7/5</div>
+            </div>
+            <p style="margin-bottom: 15px;">A highly popular and versatile player that works on almost all devices including Android, iOS, Windows, and Smart TVs. It's great for managing both Live TV and VOD (Video on Demand).</p>
+            <div class="features">
+                <strong>Key Features:</strong>
+                <ul>
+                    <li>Works on Mobile, PC, and Smart TVs</li>
+                    <li>Supports Xtream Codes API and M3U files</li>
+                    <li>Parental controls integrated</li>
+                    <li>Master Search feature for movies and shows</li>
+                </ul>
+            </div>
+            <a href="#" class="download-btn">Visit Website</a>
+        </div>
 
-        const videoElement = document.getElementById('video-player');
-        const channelListElement = document.getElementById('channel-list');
-        const statusOverlay = document.getElementById('status-overlay');
-        let hlsInstance = null;
+        <!-- App 3: Flix IPTV -->
+        <div class="review-card">
+            <div class="card-header">
+                <div class="app-name">3. Flix IPTV</div>
+                <div class="rating">⭐ 4.5/5</div>
+            </div>
+            <p style="margin-bottom: 15px;">Flix IPTV is known for its beautiful theme and stability. It requires a one-time activation fee but is an excellent choice for Samsung and LG Smart TV users.</p>
+            <div class="features">
+                <strong>Key Features:</strong>
+                <ul>
+                    <li>Customizable themes and player interface</li>
+                    <li>Supports changing audio tracks and subtitles</li>
+                    <li>Fast and stable on Smart TVs</li>
+                </ul>
+            </div>
+            <a href="#" class="download-btn">Visit Website</a>
+        </div>
 
-        // Function to load and play a stream
-        function playStream(url, listItem) {
-            // Update UI
-            document.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
-            if(listItem) listItem.classList.add('active');
-            
-            statusOverlay.style.display = 'block';
-            statusOverlay.innerText = 'Buffering...';
+    </div>
 
-            // Check if HLS.js is supported in the browser
-            if (Hls.isSupported()) {
-                if (hlsInstance) {
-                    hlsInstance.destroy(); // Clean up previous stream
-                }
-                
-                hlsInstance = new Hls();
-                hlsInstance.loadSource(url);
-                hlsInstance.attachMedia(videoElement);
-                
-                hlsInstance.on(Hls.Events.MANIFEST_PARSED, function() {
-                    statusOverlay.style.display = 'none';
-                    videoElement.play().catch(e => console.log("Auto-play prevented by browser"));
-                });
+    <footer>
+        <p>&copy; 2026 BestIPTVReviews.com. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">Disclaimer: We do not host or provide any IPTV streams. This site is for educational purposes only.</p>
+    </footer>
 
-                hlsInstance.on(Hls.Events.ERROR, function (event, data) {
-                    if (data.fatal) {
-                        statusOverlay.innerText = 'Error loading stream';
-                        statusOverlay.style.backgroundColor = 'rgba(220, 53, 69, 0.8)';
-                    }
-                });
-            }
-            // Fallback for browsers with native HLS support (like Safari on iOS/macOS)
-            else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
-                videoElement.src = url;
-                videoElement.addEventListener('loadedmetadata', function() {
-                    statusOverlay.style.display = 'none';
-                    videoElement.play();
-                });
-            } else {
-                statusOverlay.innerText = 'Your browser does not support HLS streaming.';
-            }
-        }
-
-        // Initialize the channel list UI
-        function initPlayer() {
-            channels.forEach((channel, index) => {
-                const li = document.createElement('li');
-                li.className = 'channel-item';
-                
-                li.innerHTML = `
-                    <div class="channel-name">${channel.name}</div>
-                    <div class="channel-desc">${channel.desc}</div>
-                `;
-                
-                // Add click listener to play stream
-                li.addEventListener('click', () => {
-                    playStream(channel.url, li);
-                });
-                
-                channelListElement.appendChild(li);
-            });
-
-            // Auto-play the first channel on load
-            if(channels.length > 0) {
-                const firstChannelItem = channelListElement.querySelector('.channel-item');
-                playStream(channels[0].url, firstChannelItem);
-            }
-        }
-
-        // Run initialization
-        initPlayer();
-    </script>
 </body>
 </html>
