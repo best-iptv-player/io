@@ -1,1 +1,240 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web IPTV Player</title>
+    <!-- Include HLS.js to enable .m3u8 streaming -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <style>
+        :root {
+            --bg-dark: #0f1115;
+            --bg-sidebar: #1a1d24;
+            --accent-color: #0078ff; 
+            --text-primary: #ffffff;
+            --text-secondary: #8b92a5;
+            --hover-bg: #252932;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #2a2e39;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            background-color: #14161c;
+            border-bottom: 1px solid #2a2e39;
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .channel-list {
+            list-style: none;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .channel-item {
+            padding: 16px 20px;
+            cursor: pointer;
+            border-bottom: 1px solid #222630;
+            transition: all 0.2s ease;
+        }
+
+        .channel-item:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .channel-item.active {
+            background-color: var(--accent-color);
+            border-left: 4px solid #fff;
+        }
+
+        .channel-name {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .channel-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Video Area Styles */
+        .video-container {
+            flex-grow: 1;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Status Overlay */
+        #status-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.6);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: none;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-sidebar); }
+        ::-webkit-scrollbar-thumb { background: #3a404f; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4a5166; }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>📺 Web IPTV Player</h2>
+        </div>
+        <ul class="channel-list" id="channel-list">
+            <!-- Channels will be injected here by JavaScript -->
+        </ul>
+    </aside>
+
+    <main class="video-container">
+        <div id="status-overlay">Loading stream...</div>
+        <video id="video-player" controls preload="auto"></video>
+    </main>
+
+    <script>
+        // Sample IPTV Streams (Public Test Streams)
+        // You can replace the 'url' values with your own .m3u8 links
+        const channels = [
+            {
+                name: "Akamai Test Stream",
+                desc: "1080p HLS Stream",
+                url: "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+            },
+            {
+                name: "Big Buck Bunny",
+                desc: "Open Source Movie (VOD)",
+                url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+            },
+            {
+                name: "Apple Basic Stream",
+                desc: "BipBop Test Source",
+                url: "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
+            }
+        ];
+
+        const videoElement = document.getElementById('video-player');
+        const channelListElement = document.getElementById('channel-list');
+        const statusOverlay = document.getElementById('status-overlay');
+        let hlsInstance = null;
+
+        // Function to load and play a stream
+        function playStream(url, listItem) {
+            // Update UI
+            document.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
+            if(listItem) listItem.classList.add('active');
+            
+            statusOverlay.style.display = 'block';
+            statusOverlay.innerText = 'Buffering...';
+
+            // Check if HLS.js is supported in the browser
+            if (Hls.isSupported()) {
+                if (hlsInstance) {
+                    hlsInstance.destroy(); // Clean up previous stream
+                }
+                
+                hlsInstance = new Hls();
+                hlsInstance.loadSource(url);
+                hlsInstance.attachMedia(videoElement);
+                
+                hlsInstance.on(Hls.Events.MANIFEST_PARSED, function() {
+                    statusOverlay.style.display = 'none';
+                    videoElement.play().catch(e => console.log("Auto-play prevented by browser"));
+                });
+
+                hlsInstance.on(Hls.Events.ERROR, function (event, data) {
+                    if (data.fatal) {
+                        statusOverlay.innerText = 'Error loading stream';
+                        statusOverlay.style.backgroundColor = 'rgba(220, 53, 69, 0.8)';
+                    }
+                });
+            }
+            // Fallback for browsers with native HLS support (like Safari on iOS/macOS)
+            else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
+                videoElement.src = url;
+                videoElement.addEventListener('loadedmetadata', function() {
+                    statusOverlay.style.display = 'none';
+                    videoElement.play();
+                });
+            } else {
+                statusOverlay.innerText = 'Your browser does not support HLS streaming.';
+            }
+        }
+
+        // Initialize the channel list UI
+        function initPlayer() {
+            channels.forEach((channel, index) => {
+                const li = document.createElement('li');
+                li.className = 'channel-item';
+                
+                li.innerHTML = `
+                    <div class="channel-name">${channel.name}</div>
+                    <div class="channel-desc">${channel.desc}</div>
+                `;
+                
+                // Add click listener to play stream
+                li.addEventListener('click', () => {
+                    playStream(channel.url, li);
+                });
+                
+                channelListElement.appendChild(li);
+            });
+
+            // Auto-play the first channel on load
+            if(channels.length > 0) {
+                const firstChannelItem = channelListElement.querySelector('.channel-item');
+                playStream(channels[0].url, firstChannelItem);
+            }
+        }
+
+        // Run initialization
+        initPlayer();
+    </script>
+</body>
+</html>
